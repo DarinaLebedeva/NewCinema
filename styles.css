@@ -1,0 +1,142 @@
+body {
+    background-color: #E6E1DD; 
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Полный экран */
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    position: relative;
+    width: 100%;
+}
+
+header h1 {
+    font-family: 'Monotype Corsiva', sans-serif; 
+    font-size: 2.5em; 
+    text-align: center; 
+    color: #fff; 
+    margin: 0; 
+    padding: 20px 0; 
+}
+
+h2 {
+    font-weight: bold; /* Делает текст жирным */
+    text-align: center; /* Центрирование заголовка (по желанию) */
+}
+
+.welcome-image {
+    width: 100%; /* Устанавливаем ширину изображения на 80% от родительского контейнера (или меньше, если нужно) */
+    max-width: 600px; /* Устанавливаем максимальную ширину для изображения */
+    height: auto; /* Сохраняем пропорции изображения */
+    margin: 20px auto; /* Центрируем изображение и добавляем отступ сверху и снизу */
+    display: block; /* Устанавливаем блочный элемент для центрирования */
+}
+
+.centered-text {
+    text-align: center; /* Центрируем текст */
+    margin: 20px 0; /* Добавляем отступы сверху и снизу */
+}
+
+
+
+.about-content {
+    display: flex; /* Используем flexbox для выравнивания */
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.about-image {
+    width: 600px; /* Уменьшаем размер изображения */
+    height: auto; /* Сохраняем пропорции изображения */
+    margin-right: 20px; /* Отступ справа от изображения */
+}
+
+.about-text {
+    flex: 1; /* Позволяет тексту занимать оставшееся пространство */
+}
+
+
+.w3-container {
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 20px;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie-item {
+    position: relative;
+    width: calc(33.33% - 20px); /* 3 изображения в строке с отступами */
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.movie-image {
+    width: 100%; /* Полная ширина контейнера */
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.movie-item:hover .movie-image {
+    transform: scale(1.1); /* Увеличение изображения при наведении */
+}
+
+.movie-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный фон */
+    color: white;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.movie-item:hover .movie-description {
+    opacity: 1; /* Показ описания при наведении */
+}
+
+@media (max-width: 768px) {
+    .movie-item {
+        width: calc(50% - 10px); /* 2 изображения в строке на мобильных устройствах */
+    }
+
+    .movie-description {
+        font-size: 14px; /* Уменьшение размера шрифта для описания */
+    }
+
+    .movie-image {
+        height: auto; /* Сохраняем пропорции изображения */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-item {
+        width: 100%; /* 1 изображение в строке на маленьких экранах */
+    }
+
+    .movie-description {
+        font-size: 12px; /* Дополнительное уменьшение размера шрифта для описания */
+    }
+}
+
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+}
+
+.w3-modal-content {
+    padding: 20px;
+}
+

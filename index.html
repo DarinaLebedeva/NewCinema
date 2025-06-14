@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кинотеатр Волна</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="w3-container w3-teal w3-center">
+        <h1>Кинотеатр "Волна"</h1>
+        <nav class="w3-bar w3-light-grey">
+            <a href="#home" class="w3-bar-item w3-button" onclick="showSection('home')">Привет!</a>
+            <a href="#movies" class="w3-bar-item w3-button" onclick="showSection('movies')">Фильмы</a>
+            <a href="#about" class="w3-bar-item w3-button" onclick="showSection('about')">О нас</a>
+            <a href="#contact" class="w3-bar-item w3-button" onclick="showSection('contact')">Контакты</a>
+            <button onclick="document.getElementById('ticketModal').style.display='block'" class="w3-bar-item w3-button w3-right">Купить билет</button>
+        </nav>
+    </header>
+
+    <div class="w3-container" id="home">
+    <h2>Добро пожаловать в наш кинотеатр!</h2>
+    <p class="centered-text">Смотрите последние фильмы с максимальным комфортом.</p>
+    <img src="welcome_image.jpg" class="welcome-image">
+	</div>
+
+
+    <div class="w3-container" id="movies">
+        <h2>Наши фильмы</h2>
+        <div class="movie-grid">
+            <div class="movie-item">
+                <img src="movie1.jpg" alt="Фильм 1" class="movie-image">
+                <div class="movie-description">
+                    <h3>Титаник</h3>
+                    <p>История любви между Джеком и Розой, разворачивающаяся на борту легендарного лайнера в 1912 году, который сталкивается с айсбергом и терпит крушение.</p>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="movie2.jpg" alt="Фильм 2" class="movie-image">
+                <div class="movie-description">
+                    <h3>Интерстеллар</h3>
+                    <p>Невероятное путешествие группы астронавтов, которые отправляются в космическую экспедицию через червоточину в поисках нового дома для человечества, столкнувшегося с глобальным кризисом.</p>
+                </div>
+            </div>
+            <div class="movie-item">
+                <img src="movie3.jpg" alt="Фильм 3" class="movie-image">
+                <div class="movie-description">
+                    <h3>Сияние</h3>
+                    <p>Приключение писателя Джека Торранса, который вместе с семьёй становится смотрителем отеля "Оверлук" зимой. Постепенно отель начинает оказывать на него зловещее влияние, приводя к трагическим последствиям.</p>
+                </div>
+            </div>
+			<div class="movie-item">
+                <img src="movie4.jpg" alt="Фильм 4" class="movie-image">
+                <div class="movie-description">
+                    <h3>Остров проклятых</h3>
+                    <p>Детектив о двух федеральных маршалах, которые отправляются на остров, чтобы расследовать исчезновение пациентки психбольницы. Они сталкиваются с загадочными событиями, которые ставят под сомнение их восприятие реальности.</p>
+                </div>
+            </div>
+			<div class="movie-item">
+                <img src="movie5.jpg" alt="Фильм 5" class="movie-image">
+                <div class="movie-description">
+                    <h3>Дюнкерк</h3>
+                    <p>Героическая эвакуация британских и союзных войск из Дюнкерка во время Второй мировой войны.</p>
+                </div>
+            </div>
+			<div class="movie-item">
+                <img src="movie6.jpg" alt="Фильм 6" class="movie-image">
+                <div class="movie-description">
+                    <h3>Леон</h3>
+                    <p>История о необычной дружбе между профессиональным киллером и девочкой. Фильм сочетает в себе элементы драмы, триллера и боевика, создавая трогательную и напряжённую историю.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<div class="w3-container" id="about" style="display: block;">
+    <h2>О нас</h2>
+    <div class="about-content">
+        <img src="cinema_history.jpg" alt="История кинотеатра" class="about-image">
+        <div class="about-text">
+            <p>Кинотеатр "Волна" был основан в 2020 году с целью предоставить зрителям уникальный опыт просмотра фильмов. Мы стремимся создать атмосферу, где каждый может насладиться любимыми фильмами в комфортной обстановке. <strong>Мы всегда рады видеть вас в нашем кинотеатре!</strong></p>
+        </div>
+    </div>
+</div>
+
+
+    <footer class="w3-container w3-teal" id="contact">
+        <h4>Контакты</h4>
+		<p>г. Санкт-Петербург, Невский пр-т 60</p>
+        <p>Email: info@cinema_volna.com</p>
+        <p>Телефон: +7 (123) 456-78-90</p>
+    </footer>
+
+    <!-- Модальное окно для покупки билета -->
+    <div id="ticketModal" class="w3-modal">
+        <div class="w3-modal-content w3-animate-top">
+            <header class="w3-container w3-teal">
+                <span onclick="document.getElementById('ticketModal').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+                <h2>Покупка билета</h2>
+            </header>
+            <div class="w3-container">
+                <form onsubmit="return purchaseTicket()">
+                    <label for="name">Имя:</label>
+                    <input class="w3-input" type="text" id="name" required>
+                    <label for="movie">Фильм:</label>
+                                        <select class="w3-select" id="movie" required>
+                        <option value="" disabled selected>Выберите фильм</option>
+                        <option value="Титаник">Титаник</option>
+                        <option value="Интерстеллар">Интерстеллар</option>
+                        <option value="Сияние">Сияние</option>
+						<option value="Остров проклятых">Остров проклятых</option>
+						<option value="Дюнкерк">Дюнкерк</option>
+						<option value="Леон">Леон</option>
+                    </select>
+                    <label for="seats">Количество мест:</label>
+                    <input class="w3-input" type="number" id="seats" min="1" required>
+                    <button type="submit" class="w3-button w3-teal">Купить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('ticketModal')) {
+                document.getElementById('ticketModal').style.display = "none";
+            }
+        }
+
+        function purchaseTicket() {
+            const name = document.getElementById('name').value;
+            const movie = document.getElementById('movie').value;
+            const seats = document.getElementById('seats').value;
+
+            document.getElementById('ticketModal').style.display = 'none';
+
+            alert(`Спасибо, ${name}! Вы успешно приобрели ${seats} билет(а) на "${movie}". Рассадка в кинотеатре свободная.`);
+			
+			document.getElementById('name').value = '';
+			document.getElementById('movie').selectedIndex = 0; 
+			document.getElementById('seats').value = '';
+
+			
+            return false; 
+        }
+		
+		function showSection(sectionId) {
+            document.getElementById('home').style.display = 'none';
+            document.getElementById('movies').style.display = 'none';
+            document.getElementById('about').style.display = 'none';
+            document.getElementById('contact').style.display = 'none';
+
+            document.getElementById(sectionId).style.display = 'block';
+        }
+		
+    </script>
+
+</body>
+</html>
+
